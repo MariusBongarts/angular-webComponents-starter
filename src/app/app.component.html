@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="addPerson()">
+  <vaadin-text-field
+    label="First Name"
+    formControlName="firstName"
+    ngDefaultControl
+  >
+  </vaadin-text-field>
+  <vaadin-text-field
+    label="Last Name"
+    formControlName="lastName"
+    ngDefaultControl
+  >
+  </vaadin-text-field>
+  <vaadin-button (click)="addPerson()"> Add </vaadin-button>
+</form>
+
+<vaadin-grid [items]="people">
+  <vaadin-grid-column path="firstName" header="First name">
+  </vaadin-grid-column>
+  <vaadin-grid-column path="lastName" header="Last name"> </vaadin-grid-column>
+</vaadin-grid>
+
+<app-starter (buttonClick)="componentAction()" title="Marius"></app-starter>
